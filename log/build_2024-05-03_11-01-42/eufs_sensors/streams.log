@@ -1,0 +1,22 @@
+[0.532s] Invoking command in '/home/unai/FSB/fsb_sim/build/eufs_sensors': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/unai/FSB/fsb_sim/eufs_sensors -DCMAKE_INSTALL_PREFIX=/home/unai/FSB/fsb_sim/install/eufs_sensors
+[0.565s] -- The C compiler identification is GNU 11.4.0
+[0.602s] -- The CXX compiler identification is GNU 11.4.0
+[0.608s] -- Detecting C compiler ABI info
+[0.654s] -- Detecting C compiler ABI info - done
+[0.658s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.659s] -- Detecting C compile features
+[0.659s] -- Detecting C compile features - done
+[0.661s] -- Detecting CXX compiler ABI info
+[0.710s] -- Detecting CXX compiler ABI info - done
+[0.719s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.720s] -- Detecting CXX compile features
+[0.720s] -- Detecting CXX compile features - done
+[0.722s] -- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.825s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.883s] -- Found ament_lint_auto: 0.12.10 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.937s] -- Added test 'copyright' to check source files copyright and LICENSE
+[0.939s] -- Added test 'lint_cmake' to check CMake code style
+[0.941s] -- Added test 'xmllint' to check XML markup files
+[0.943s] -- Configuring done
+[0.946s] -- Generating done
+[0.946s] -- Build files have been written to: /home/unai/FSB/fsb_sim/build/eufs_sensors
