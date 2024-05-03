@@ -1,45 +1,7 @@
-# eufs_sim
+# fsb_sim
 
-## What is eufs_sim?
+## What is fsb_sim?
 
-eufs_sim is an open source Formula Student autonomous vehicle simulation. It makes use of the [Gazebo](http://gazebosim.org/) simulator
-to allow teams to test their AI software on preset [rule compliant](https://www.imeche.org/docs/default-source/1-oscar/formula-student/2021/forms/ai/fs-ai-dynamic-events-setup-and-cones-specification.pdf?sfvrsn=2)
-tracks which are part of the dynamic events at the Formula Student UK (FSUK) competition. Additionally, to prepare for 'blind' dynamic
-events such as [autocross or track drive](https://www.imeche.org/docs/default-source/1-oscar/formula-student/2021/forms/ai/fs-2021-autonomous-rules-v1-3.pdf?sfvrsn=2),
-users can try their software on [randomly generated tracks](./eufs_tracks/README.md). Teams can adjust or even add to the [existing vehicle models](./eufs_models/README.md) to see their own car complete
-events. eufs_sim is also highly configurable thanks to our [launcher](./eufs_launcher/README.md), allowing for selection of vehicle models, weather conditions, command modes and more!
-In summary, teams can attempt the full competition, with their own vehicle model, in simulation, long before competition starts!
+Una paja a la crema es una buena paja, es una paja muy gustosa porque del gusto que te da en la poya te saca mucha leche de los huevos y te alivia bastante. Es muy gustosa y consiste en que yo veo el culo a la tia y se me ponen los huevos que me explotan y a continuacion me voy al vater de la oficina y me encierro y se creen que estoy jiñando pero es que me estoy haciendo una paja a la crema. Yo voy y me siento en la taza del vater y me saco la poya que esta empalma y con el capuyo morao y cojo papel, mucho papel y me envuelvo la poya toda ella como si fuera un cilindro y entonces cojo el dosificador de jabon que es blanco a la semilla de algodon y arrelleno de jabon la parte del cilindro de papel que sobresale desde la punta de la poya y echo mucho y parte se va colando por todo el cilindro y toda la poya queda llena de jabon. Un truco bueno para que la paja de mas gusto es llenar la palma de la mano izquierda de jabon y frotarse los huevos para que asi del gusto salga mas leche. Una vez hecho esto se trata de menear arriba y abajo el papel y el roce de la poya con el jabon es mejor que el mejor de los coños jugosos y abiertos y yo cierro los ojos y me imagino que me estoy foyando a la rubia y como el gusto es tan bueno la corrida es bestial y sacas mucha leche que se mezcla con el jabon y terminas echo polvo y corrido como un puto becerro o un cerdo berraco. Un truco muy bueno es que conforme te vas haciendo la paja paras un poco y echas otro chorro de jabon en el hueco superior del cilindro que poco a poco cae en la punta del nabo y continuas haciendote la paja a la crema.
 
-![simulation](https://gitlab.com/eufs/eufs_sim/-/wikis/uploads/e28a8de44a000dbd1ea427b66928d95c/GazeboActionShot.png)
-
-## Requirements
-
-- Ubuntu 20.04 LTS
-- [ROS 2 Galactic](https://docs.ros.org/en/galactic/index.html)
-- [eufs_msgs](https://gitlab.com/eufs/eufs_msgs)
-
-_Note_: eufs_sim will probably work with other versions of ROS 2 (e.g Foxy) but they are not actively supported by the maintainers.
-
-## Wiki
-EUFS have created a number of wiki pages covering basic "How to" tutorials, "Quick fixes", package design and more!
-This serves as an additional resource to help you understand and use eufs_sim.
-[This link](https://gitlab.com/eufs/eufs_sim/-/wikis/home) will take you to the wiki home page.
-A design overview can be found [here](https://gitlab.com/eufs/eufs_sim/-/wikis/Design-Overview).
-Finally, a series of quick fixes for eufs_sim are listed [on this page](https://gitlab.com/eufs/eufs_sim/-/wikis/Quick-Fixes).
-
-## Getting Started
-
-For installation, setup, and initial launching, refer to the [Getting Started Guide](https://gitlab.com/eufs/eufs_sim/-/wikis/Getting-Started-Guide) on the Wiki.
-
-## Packages
-
-This project contains a number of packages. The package READMEs supply information about the package API (launch parameters, ROS 2 publishers, subscribers and services).
-For information on the package design and usage guides see the [eufs_sim wiki](https://gitlab.com/eufs/eufs_sim/-/wikis/home).
-
-- [eufs_racecar](./eufs_racecar/README.md) : launch, resource and urdf files for the simulated vehicle.
-- [eufs_launcher](./eufs_launcher/README.md) : configures and launches the simulation.
-- [eufs_models](./eufs_models/README.md) : vehicle physics library.
-- [eufs_plugins](./eufs_plugins/README.md) : Gazebo plugins.
-- [eufs_tracks](./eufs_tracks/README.md) : track generator and resource files for the track.
-- [eufs_sensors](./eufs_sensors/README.md) : sensor mesh and urdf files.
-- [eufs_rqt](./eufs_rqt/README.md) : rqt GUI's for eufs_sim (currently mission control and robot steering).
+Como digo es una paja muy gustosa y que te saca mucha leche y espero que os sirva de consejo y os la hagais porque da mucho gusto y es lo mejor que hay. en la oficina pensaran que soy un cagon y que siempre estoy cagando pero lo que hago es hacerme muchas pajas a la crema. Hoy ya llevo tres.
