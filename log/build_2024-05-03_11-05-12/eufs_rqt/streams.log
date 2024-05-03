@@ -1,0 +1,56 @@
+[0.463s] Invoking command in '/home/unai/FSB/fsb_sim/eufs_rqt': AMENT_PREFIX_PATH=/home/unai/FSB/fsb_sim/install/eufs_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/unai/FSB/fsb_sim/install/eufs_msgs LD_LIBRARY_PATH=/home/unai/FSB/fsb_sim/install/eufs_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/unai/FSB/fsb_sim/build/eufs_rqt/prefix_override:/home/unai/FSB/fsb_sim/install/eufs_rqt/lib/python3.10/site-packages:/home/unai/FSB/fsb_sim/install/eufs_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/eufs_rqt build --build-base /home/unai/FSB/fsb_sim/build/eufs_rqt/build install --record /home/unai/FSB/fsb_sim/build/eufs_rqt/install.log --single-version-externally-managed install_data
+[0.649s] running egg_info
+[0.650s] creating ../build/eufs_rqt/eufs_rqt.egg-info
+[0.650s] writing ../build/eufs_rqt/eufs_rqt.egg-info/PKG-INFO
+[0.650s] writing dependency_links to ../build/eufs_rqt/eufs_rqt.egg-info/dependency_links.txt
+[0.650s] writing requirements to ../build/eufs_rqt/eufs_rqt.egg-info/requires.txt
+[0.650s] writing top-level names to ../build/eufs_rqt/eufs_rqt.egg-info/top_level.txt
+[0.650s] writing manifest file '../build/eufs_rqt/eufs_rqt.egg-info/SOURCES.txt'
+[0.652s] reading manifest file '../build/eufs_rqt/eufs_rqt.egg-info/SOURCES.txt'
+[0.652s] adding license file 'LICENSE'
+[0.652s] writing manifest file '../build/eufs_rqt/eufs_rqt.egg-info/SOURCES.txt'
+[0.652s] running build
+[0.653s] running build_py
+[0.653s] creating /home/unai/FSB/fsb_sim/build/eufs_rqt/build
+[0.653s] creating /home/unai/FSB/fsb_sim/build/eufs_rqt/build/lib
+[0.653s] creating /home/unai/FSB/fsb_sim/build/eufs_rqt/build/lib/eufs_rqt
+[0.653s] copying src/eufs_rqt/__init__.py -> /home/unai/FSB/fsb_sim/build/eufs_rqt/build/lib/eufs_rqt
+[0.653s] copying src/eufs_rqt/MissionControlGUI.py -> /home/unai/FSB/fsb_sim/build/eufs_rqt/build/lib/eufs_rqt
+[0.653s] copying src/eufs_rqt/EUFSRobotSteeringGUI.py -> /home/unai/FSB/fsb_sim/build/eufs_rqt/build/lib/eufs_rqt
+[0.653s] running build_scripts
+[0.653s] creating /home/unai/FSB/fsb_sim/build/eufs_rqt/build/scripts-3.10
+[0.653s] copying and adjusting scripts/eufs_robot_steering_gui -> /home/unai/FSB/fsb_sim/build/eufs_rqt/build/scripts-3.10
+[0.653s] copying and adjusting scripts/mission_control_gui -> /home/unai/FSB/fsb_sim/build/eufs_rqt/build/scripts-3.10
+[0.653s] changing mode of /home/unai/FSB/fsb_sim/build/eufs_rqt/build/scripts-3.10/eufs_robot_steering_gui from 664 to 775
+[0.653s] changing mode of /home/unai/FSB/fsb_sim/build/eufs_rqt/build/scripts-3.10/mission_control_gui from 664 to 775
+[0.654s] running install
+[0.654s] running install_lib
+[0.654s] creating /home/unai/FSB/fsb_sim/install/eufs_rqt/lib/python3.10/site-packages/eufs_rqt
+[0.654s] copying /home/unai/FSB/fsb_sim/build/eufs_rqt/build/lib/eufs_rqt/__init__.py -> /home/unai/FSB/fsb_sim/install/eufs_rqt/lib/python3.10/site-packages/eufs_rqt
+[0.654s] copying /home/unai/FSB/fsb_sim/build/eufs_rqt/build/lib/eufs_rqt/MissionControlGUI.py -> /home/unai/FSB/fsb_sim/install/eufs_rqt/lib/python3.10/site-packages/eufs_rqt
+[0.654s] copying /home/unai/FSB/fsb_sim/build/eufs_rqt/build/lib/eufs_rqt/EUFSRobotSteeringGUI.py -> /home/unai/FSB/fsb_sim/install/eufs_rqt/lib/python3.10/site-packages/eufs_rqt
+[0.654s] byte-compiling /home/unai/FSB/fsb_sim/install/eufs_rqt/lib/python3.10/site-packages/eufs_rqt/__init__.py to __init__.cpython-310.pyc
+[0.654s] byte-compiling /home/unai/FSB/fsb_sim/install/eufs_rqt/lib/python3.10/site-packages/eufs_rqt/MissionControlGUI.py to MissionControlGUI.cpython-310.pyc
+[0.655s] byte-compiling /home/unai/FSB/fsb_sim/install/eufs_rqt/lib/python3.10/site-packages/eufs_rqt/EUFSRobotSteeringGUI.py to EUFSRobotSteeringGUI.cpython-310.pyc
+[0.657s] running install_data
+[0.657s] creating /home/unai/FSB/fsb_sim/install/eufs_rqt/share/eufs_rqt/config
+[0.657s] copying config/eufs_sim.perspective -> /home/unai/FSB/fsb_sim/install/eufs_rqt/share/eufs_rqt/config
+[0.657s] creating /home/unai/FSB/fsb_sim/install/eufs_rqt/share/eufs_rqt/resource
+[0.658s] copying resource/EUFSRobotSteeringGUI.ui -> /home/unai/FSB/fsb_sim/install/eufs_rqt/share/eufs_rqt/resource
+[0.658s] copying resource/MissionControlGUI.ui -> /home/unai/FSB/fsb_sim/install/eufs_rqt/share/eufs_rqt/resource
+[0.658s] copying plugin.xml -> /home/unai/FSB/fsb_sim/install/eufs_rqt/share/eufs_rqt
+[0.658s] creating /home/unai/FSB/fsb_sim/install/eufs_rqt/share/ament_index
+[0.658s] creating /home/unai/FSB/fsb_sim/install/eufs_rqt/share/ament_index/resource_index
+[0.658s] creating /home/unai/FSB/fsb_sim/install/eufs_rqt/share/ament_index/resource_index/packages
+[0.658s] copying resource/eufs_rqt -> /home/unai/FSB/fsb_sim/install/eufs_rqt/share/ament_index/resource_index/packages
+[0.658s] copying package.xml -> /home/unai/FSB/fsb_sim/install/eufs_rqt/share/eufs_rqt
+[0.658s] running install_egg_info
+[0.659s] Copying ../build/eufs_rqt/eufs_rqt.egg-info to /home/unai/FSB/fsb_sim/install/eufs_rqt/lib/python3.10/site-packages/eufs_rqt-2.0.0-py3.10.egg-info
+[0.659s] running install_scripts
+[0.673s] creating /home/unai/FSB/fsb_sim/install/eufs_rqt/lib/eufs_rqt
+[0.673s] copying /home/unai/FSB/fsb_sim/build/eufs_rqt/build/scripts-3.10/mission_control_gui -> /home/unai/FSB/fsb_sim/install/eufs_rqt/lib/eufs_rqt
+[0.673s] copying /home/unai/FSB/fsb_sim/build/eufs_rqt/build/scripts-3.10/eufs_robot_steering_gui -> /home/unai/FSB/fsb_sim/install/eufs_rqt/lib/eufs_rqt
+[0.673s] changing mode of /home/unai/FSB/fsb_sim/install/eufs_rqt/lib/eufs_rqt/mission_control_gui to 775
+[0.673s] changing mode of /home/unai/FSB/fsb_sim/install/eufs_rqt/lib/eufs_rqt/eufs_robot_steering_gui to 775
+[0.674s] writing list of installed files to '/home/unai/FSB/fsb_sim/build/eufs_rqt/install.log'
+[0.692s] Invoked command in '/home/unai/FSB/fsb_sim/eufs_rqt' returned '0': AMENT_PREFIX_PATH=/home/unai/FSB/fsb_sim/install/eufs_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/unai/FSB/fsb_sim/install/eufs_msgs LD_LIBRARY_PATH=/home/unai/FSB/fsb_sim/install/eufs_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/unai/FSB/fsb_sim/build/eufs_rqt/prefix_override:/home/unai/FSB/fsb_sim/install/eufs_rqt/lib/python3.10/site-packages:/home/unai/FSB/fsb_sim/install/eufs_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/eufs_rqt build --build-base /home/unai/FSB/fsb_sim/build/eufs_rqt/build install --record /home/unai/FSB/fsb_sim/build/eufs_rqt/install.log --single-version-externally-managed install_data

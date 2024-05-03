@@ -1,0 +1,48 @@
+running egg_info
+creating ../build/eufs_launcher/eufs_launcher.egg-info
+writing ../build/eufs_launcher/eufs_launcher.egg-info/PKG-INFO
+writing dependency_links to ../build/eufs_launcher/eufs_launcher.egg-info/dependency_links.txt
+writing requirements to ../build/eufs_launcher/eufs_launcher.egg-info/requires.txt
+writing top-level names to ../build/eufs_launcher/eufs_launcher.egg-info/top_level.txt
+writing manifest file '../build/eufs_launcher/eufs_launcher.egg-info/SOURCES.txt'
+reading manifest file '../build/eufs_launcher/eufs_launcher.egg-info/SOURCES.txt'
+writing manifest file '../build/eufs_launcher/eufs_launcher.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/unai/FSB/fsb_sim/build/eufs_launcher/build
+creating /home/unai/FSB/fsb_sim/build/eufs_launcher/build/lib
+creating /home/unai/FSB/fsb_sim/build/eufs_launcher/build/lib/eufs_launcher
+copying src/eufs_launcher/LauncherModule.py -> /home/unai/FSB/fsb_sim/build/eufs_launcher/build/lib/eufs_launcher
+copying src/eufs_launcher/__init__.py -> /home/unai/FSB/fsb_sim/build/eufs_launcher/build/lib/eufs_launcher
+running build_scripts
+creating /home/unai/FSB/fsb_sim/build/eufs_launcher/build/scripts-3.10
+copying and adjusting scripts/eufs_launcher -> /home/unai/FSB/fsb_sim/build/eufs_launcher/build/scripts-3.10
+changing mode of /home/unai/FSB/fsb_sim/build/eufs_launcher/build/scripts-3.10/eufs_launcher from 664 to 775
+running install
+running install_lib
+creating /home/unai/FSB/fsb_sim/install/eufs_launcher/lib/python3.10/site-packages/eufs_launcher
+copying /home/unai/FSB/fsb_sim/build/eufs_launcher/build/lib/eufs_launcher/LauncherModule.py -> /home/unai/FSB/fsb_sim/install/eufs_launcher/lib/python3.10/site-packages/eufs_launcher
+copying /home/unai/FSB/fsb_sim/build/eufs_launcher/build/lib/eufs_launcher/__init__.py -> /home/unai/FSB/fsb_sim/install/eufs_launcher/lib/python3.10/site-packages/eufs_launcher
+byte-compiling /home/unai/FSB/fsb_sim/install/eufs_launcher/lib/python3.10/site-packages/eufs_launcher/LauncherModule.py to LauncherModule.cpython-310.pyc
+byte-compiling /home/unai/FSB/fsb_sim/install/eufs_launcher/lib/python3.10/site-packages/eufs_launcher/__init__.py to __init__.cpython-310.pyc
+running install_data
+copying launch/eufs_launcher.launch.py -> /home/unai/FSB/fsb_sim/install/eufs_launcher/share/eufs_launcher
+copying launch/simulation.launch.py -> /home/unai/FSB/fsb_sim/install/eufs_launcher/share/eufs_launcher
+creating /home/unai/FSB/fsb_sim/install/eufs_launcher/share/eufs_launcher/config
+copying config/eufs_launcher.yaml -> /home/unai/FSB/fsb_sim/install/eufs_launcher/share/eufs_launcher/config
+copying config/default.rviz -> /home/unai/FSB/fsb_sim/install/eufs_launcher/share/eufs_launcher/config
+creating /home/unai/FSB/fsb_sim/install/eufs_launcher/share/eufs_launcher/resource
+copying resource/launcher.ui -> /home/unai/FSB/fsb_sim/install/eufs_launcher/share/eufs_launcher/resource
+copying plugin.xml -> /home/unai/FSB/fsb_sim/install/eufs_launcher/share/eufs_launcher
+creating /home/unai/FSB/fsb_sim/install/eufs_launcher/share/ament_index
+creating /home/unai/FSB/fsb_sim/install/eufs_launcher/share/ament_index/resource_index
+creating /home/unai/FSB/fsb_sim/install/eufs_launcher/share/ament_index/resource_index/packages
+copying resource/eufs_launcher -> /home/unai/FSB/fsb_sim/install/eufs_launcher/share/ament_index/resource_index/packages
+copying package.xml -> /home/unai/FSB/fsb_sim/install/eufs_launcher/share/eufs_launcher
+running install_egg_info
+Copying ../build/eufs_launcher/eufs_launcher.egg-info to /home/unai/FSB/fsb_sim/install/eufs_launcher/lib/python3.10/site-packages/eufs_launcher-2.0.0-py3.10.egg-info
+running install_scripts
+creating /home/unai/FSB/fsb_sim/install/eufs_launcher/lib/eufs_launcher
+copying /home/unai/FSB/fsb_sim/build/eufs_launcher/build/scripts-3.10/eufs_launcher -> /home/unai/FSB/fsb_sim/install/eufs_launcher/lib/eufs_launcher
+changing mode of /home/unai/FSB/fsb_sim/install/eufs_launcher/lib/eufs_launcher/eufs_launcher to 775
+writing list of installed files to '/home/unai/FSB/fsb_sim/build/eufs_launcher/install.log'

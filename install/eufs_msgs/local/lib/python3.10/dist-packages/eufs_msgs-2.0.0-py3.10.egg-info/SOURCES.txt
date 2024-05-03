@@ -1,0 +1,6 @@
+setup.py
+eufs_msgs/__init__.py
+eufs_msgs.egg-info/PKG-INFO
+eufs_msgs.egg-info/SOURCES.txt
+eufs_msgs.egg-info/dependency_links.txt
+eufs_msgs.egg-info/top_level.txt
