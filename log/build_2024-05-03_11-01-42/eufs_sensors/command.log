@@ -1,1 +1,0 @@
-Invoking command in '/home/unai/FSB/fsb_sim/build/eufs_sensors': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/unai/FSB/fsb_sim/eufs_sensors -DCMAKE_INSTALL_PREFIX=/home/unai/FSB/fsb_sim/install/eufs_sensors

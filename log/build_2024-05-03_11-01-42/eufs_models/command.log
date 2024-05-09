@@ -1,2 +1,0 @@
-Invoking command in '/home/unai/FSB/fsb_sim/build/eufs_models': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/unai/FSB/fsb_sim/eufs_models -DCMAKE_INSTALL_PREFIX=/home/unai/FSB/fsb_sim/install/eufs_models
-Invoked command in '/home/unai/FSB/fsb_sim/build/eufs_models' returned '1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/unai/FSB/fsb_sim/eufs_models -DCMAKE_INSTALL_PREFIX=/home/unai/FSB/fsb_sim/install/eufs_models

@@ -1,4 +1,0 @@
-Invoking command in '/home/unai/FSB/fsb_sim/build/eufs_sensors': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/unai/FSB/fsb_sim/build/eufs_sensors -- -j8 -l8
-Invoked command in '/home/unai/FSB/fsb_sim/build/eufs_sensors' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/unai/FSB/fsb_sim/build/eufs_sensors -- -j8 -l8
-Invoking command in '/home/unai/FSB/fsb_sim/build/eufs_sensors': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/unai/FSB/fsb_sim/build/eufs_sensors
-Invoked command in '/home/unai/FSB/fsb_sim/build/eufs_sensors' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/unai/FSB/fsb_sim/build/eufs_sensors
