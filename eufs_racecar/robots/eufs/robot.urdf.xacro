@@ -69,7 +69,7 @@
     </xacro:VLP-16R>
     -->
 
-    <xacro:OS1-32 parent="base_footprint" name="os1_sensor">
+    <xacro:OS1-32 parent="base_footprint" name="os1_sensor" active="$(arg simulate_perception)">
         <origin xyz="-0.15 0.0 0.79" rpy="0 ${1*M_PI/180.0} 0"/>
     </xacro:OS1-32>
 
