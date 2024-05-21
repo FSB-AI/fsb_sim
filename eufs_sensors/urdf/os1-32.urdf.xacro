@@ -34,7 +34,7 @@
     <link name="${imu_link}" />
 
     <link name="${lidar_link}" />
-
+    
 
     <joint name="${name}_imu_link_joint" type="fixed">
       <parent link="${name}" />
