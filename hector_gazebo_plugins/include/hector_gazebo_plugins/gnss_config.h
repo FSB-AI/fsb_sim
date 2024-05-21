@@ -26,55 +26,43 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //=================================================================================================
 
-#ifndef HECTOR_GAZEBO_PLUGINS_GAZEBO_ROS_SONAR_H
-#define HECTOR_GAZEBO_PLUGINS_GAZEBO_ROS_SONAR_H
+#ifndef HECTOR_GAZEBO_PLUGINS_GNSS_CONFIG_H
+#define HECTOR_GAZEBO_PLUGINS_GNSS_CONFIG_H
 
-#include <gazebo/common/Plugin.hh>
-
-#include <gazebo_ros/node.hpp>
 #include <rclcpp/rclcpp.hpp>
 #include <rclcpp/node.hpp>
-#include <sensor_msgs/msg/range.hpp>
-#include <hector_gazebo_plugins/sensor_model.h>
-#include <hector_gazebo_plugins/update_timer.h>
+#include <gazebo_ros/node.hpp>
+
 
 namespace gazebo
 {
 
-class GazeboRosSonar : public SensorPlugin
+class GNSSConfig
 {
 public:
-  GazeboRosSonar();
-  virtual ~GazeboRosSonar();
+  GNSSConfig(gazebo_ros::Node::SharedPtr node) 
+  {
+    this->node_ = node;
 
-protected:
-  virtual void Load(sensors::SensorPtr _sensor, sdf::ElementPtr _sdf);
-  virtual void Reset();
-  virtual void Update();
+    // Initialize the parameters
+    node_->declare_parameter<bool>("status_fix", true);  // unaugmented fix
+    node_->declare_parameter<bool>("status_sbas_fix", false);  // fix with satellite-based augmentation
+    node_->declare_parameter<bool>("status_gbas_fix", false);  // with ground-based augmentation
+    node_->declare_parameter<bool>("service_gps", true);  // GPS service
+    node_->declare_parameter<bool>("service_glonass", true);  // GLONASS service
+    node_->declare_parameter<bool>("service_compass", true);  // COMPASS service
+    node_->declare_parameter<bool>("service_galileo", true);  // GALILEO service
+  }
+
+  virtual ~GNSSConfig() 
+  {
+    node_ = nullptr;
+  }
 
 private:
-  /// \brief The parent World
-  physics::WorldPtr world;
-
-  sensors::RaySensorPtr sensor_;
-
   gazebo_ros::Node::SharedPtr node_;
-  rclcpp::Publisher<sensor_msgs::msg::Range>::SharedPtr publisher_;
-
-  sensor_msgs::msg::Range range_;
-
-  std::string namespace_;
-  std::string topic_;
-  std::string frame_id_;
-
-  SensorModel sensor_model_;
-
-  UpdateTimer updateTimer;
-  event::ConnectionPtr updateConnection;
-
-  rclcpp::Node::OnSetParametersCallbackHandle::SharedPtr callback_handle_;
 };
 
 } // namespace gazebo
 
-#endif // HECTOR_GAZEBO_PLUGINS_GAZEBO_ROS_SONAR_H
+#endif // HECTOR_GAZEBO_PLUGINS_GNSS_CONFIG_H
