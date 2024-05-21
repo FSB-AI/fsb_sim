@@ -1,26 +1,18 @@
 <?xml version="1.0"?>
-<package format="2">
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
   <name>ouster_gazebo_plugins</name>
-  <version>1.0.7</version>
-  <description>
-    Gazebo plugin to provide simulated data from Ouster laser scanners.
-  </description>
+  <version>0.0.0</version>
+  <description>TODO: Package description</description>
+  <maintainer email="ag6154lk@gmail.com">nonroot</maintainer>
+  <license>TODO: License declaration</license>
 
-  <license>BSD</license>
-  <author>Kevin Hallenbeck</author>
-  <maintainer email="khallenbeck@dataspeedinc.com">Kevin Hallenbeck</maintainer>
-  <url type="website">http://wiki.ros.org/velodyne_gazebo_plugins</url>
-  <url type="repository">https://bitbucket.org/dataspeedinc/velodyne_simulator</url>
-  <url type="bugtracker">https://bitbucket.org/dataspeedinc/velodyne_simulator/issues</url>
+  <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <buildtool_depend>catkin</buildtool_depend>
-
-  <depend>roscpp</depend>
-  <depend>sensor_msgs</depend>
-  <depend>tf</depend>
-  <depend>gazebo_ros</depend>
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
 
   <export>
+    <build_type>ament_cmake</build_type>
   </export>
-
 </package>

@@ -1,50 +1,26 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.8)
 project(ouster_gazebo_plugins)
 
-find_package(catkin REQUIRED COMPONENTS
-  roscpp
-  sensor_msgs
-  tf
-  gazebo_ros
-)
-find_package(gazebo REQUIRED)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
 
-catkin_package(
-  INCLUDE_DIRS include ${GAZEBO_INCLUDE_DIRS}
-  LIBRARIES gazebo_ros_ouster_laser gazebo_ros_ouster_gpu_laser
-  CATKIN_DEPENDS roscpp sensor_msgs gazebo_ros
-)
+# find dependencies
+find_package(ament_cmake REQUIRED)
+# uncomment the following section in order to fill in
+# further dependencies manually.
+# find_package(<dependency> REQUIRED)
 
-include_directories(
-  include
-  ${catkin_INCLUDE_DIRS}
-  ${GAZEBO_INCLUDE_DIRS}
-)
+if(BUILD_TESTING)
+  find_package(ament_lint_auto REQUIRED)
+  # the following line skips the linter which checks for copyrights
+  # comment the line when a copyright and license is added to all source files
+  set(ament_cmake_copyright_FOUND TRUE)
+  # the following line skips cpplint (only works in a git repo)
+  # comment the line when this package is in a git repo and when
+  # a copyright and license is added to all source files
+  set(ament_cmake_cpplint_FOUND TRUE)
+  ament_lint_auto_find_test_dependencies()
+endif()
 
-link_directories(
-  ${GAZEBO_LIBRARY_DIRS}
-)
-
-add_library(gazebo_ros_ouster_laser src/GazeboRosOusterLaser.cpp)
-target_link_libraries(gazebo_ros_ouster_laser
-  ${catkin_LIBRARIES}
-  ${GAZEBO_LIBRARIES}
-  RayPlugin
-)
-
-add_library(gazebo_ros_ouster_gpu_laser src/GazeboRosOusterLaser.cpp)
-target_link_libraries(gazebo_ros_ouster_gpu_laser
-  ${catkin_LIBRARIES}
-  ${GAZEBO_LIBRARIES}
-  GpuRayPlugin
-)
-target_compile_definitions(gazebo_ros_ouster_gpu_laser PRIVATE GAZEBO_GPU_RAY=1)
-
-install(TARGETS gazebo_ros_ouster_laser gazebo_ros_ouster_gpu_laser
-        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-)
-
-install(DIRECTORY include/${PROJECT_NAME}/
-        DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-)
+ament_package()
