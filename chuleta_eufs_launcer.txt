@@ -1,0 +1,22 @@
+build + source + ros2 launch eufs_launcher eufs_launcher.launch.py
+
+### que hace esta vaina? ###
+
+
+1) ejecuta eufs_launcher.launch.py ubicado en la carpeta launch/ dentro del paquete eufs_launcher
+
+2) eufs_launcher.launch.py se encarga de lanzar el nodo del simulador con los parametros config, config_loc y gui
+	
+	2.1) config: estos son los valores que te salen antes de ejecutar el simulador: simulated perception, gazebo_gui ... tambien podemos cambiar los valores por defecto de estos
+	
+	2.2) config_loc: es para espeficar de que paquete sacar el archivo de configuracion
+	
+	2.3) gui: "This argument determines whether to launch the GUI. The default value is true."
+	
+	
+	con estos argumentos se ejecuta el el archivo scripts/eufs_launcher
+
+3) scripts/eufs_launcher ejecuta el LauncherModule.py ubicado en src/eufs_launcher
+
+	) aqui esta todo el mandangon
+
