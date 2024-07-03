@@ -8,6 +8,9 @@
   <!-- Velodyne VLP-16R -->
   <xacro:include filename="$(find eufs_sensors)/urdf/VLP-16R.urdf.xacro"/>
 
+  <!-- Ouster OS1-32 -->
+  <xacro:include filename="$(find eufs_sensors)/urdf/os1-32.urdf.xacro"/>
+
   <!-- Imu -->
   <xacro:include filename="$(find eufs_sensors)/urdf/imu.urdf.xacro"/>
 
