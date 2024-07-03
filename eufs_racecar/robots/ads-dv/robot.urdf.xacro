@@ -47,24 +47,24 @@
 
     <!-- Placa -->
     <xacro:plate prefix="plate" parent="base_footprint">
-        <origin xyz="0 0 0.05" rpy="0 0 0"/>
+        <origin xyz="0.5 0 0.2" rpy="0 0 0"/>
     </xacro:plate>
 
     <!-- Sensores -->
     <xacro:sensor_imu parent="plate_plate" prefix="imu">
-        <origin xyz="1 1 1" rpy="0 0 0"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
     </xacro:sensor_imu>
 
     <xacro:sensor_gps parent="plate_plate" prefix="gps">
-        <origin xyz="0.0 0.0 0.4" rpy="0 0 0"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
     </xacro:sensor_gps>
 
-    <xacro:VLP-16R parent="plate_plate" name="velodyne" topic="/velodyne_points" hz="10" samples="800" active="$(arg simulate_perception)">
-        <origin xyz="0.59 0.0 0.51" rpy="0 ${10*PI/180.0} 0"/>
-    </xacro:VLP-16R>
+    <xacro:OS1-32 parent="plate_plate" name="os1_sensor" active="$(arg simulate_perception)">
+        <origin xyz="0.1 0.0 0.15" rpy="0 0 0"/>
+    </xacro:OS1-32>
 
     <xacro:zed_camera parent="plate_plate" prefix="zed" active="$(arg simulate_perception)">
-        <origin xyz="0.12 0.0 0.76" rpy="0 ${10.15*PI/180.0} 0"/>
+        <origin xyz="-0.03 0.0 0.23" rpy="0 ${10.15*PI/180.0} 0"/>
     </xacro:zed_camera>
 
 </robot>

@@ -2,22 +2,23 @@
 <robot name="all_sensors" xmlns:xacro="http://www.ros.org/wiki/xacro">
   <!-- This file unifies all sensors that can be used on simulation, defined as xacro:macros -->
 
+  <!-- Plate -->
+  <xacro:include filename="$(find eufs_sensors)/urdf/plate.urdf.xacro"/>
+
   <!-- GPS -->
   <xacro:include filename="$(find eufs_sensors)/urdf/gps.urdf.xacro"/>
 
   <!-- Velodyne VLP-16R -->
-  <xacro:include filename="$(find eufs_sensors)/urdf/VLP-16R.urdf.xacro"/>
+  <!-- <xacro:include filename="$(find eufs_sensors)/urdf/VLP-16R.urdf.xacro"/> -->
 
   <!-- Ouster OS1-32 -->
-  <xacro:include filename="$(find eufs_sensors)/urdf/os1-32.urdf.xacro"/>
+  <xacro:include filename="$(find eufs_sensors)/urdf/os1-32.urdf.xacro" parent="plate_link"/>
 
   <!-- Imu -->
   <xacro:include filename="$(find eufs_sensors)/urdf/imu.urdf.xacro"/>
 
   <!-- ZED Stereo camera -->
-  <xacro:include filename="$(find eufs_sensors)/urdf/zed.urdf.xacro"/>
+  <xacro:include filename="$(find eufs_sensors)/urdf/zed.urdf.xacro" parent="plate_link"/>
 
-    <!-- Plate -->
-  <xacro:include filename="$(find eufs_sensors)/urdf/plate.urdf.xacro"/>
 
 </robot>
