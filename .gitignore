@@ -1,3 +1,24 @@
+# ROS2 build artifacts
 build/
 log/
 install/
+
+# Colcon configuration
+.colcon/
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+*.so
+
+# Build scripts (optional)
+build.sh

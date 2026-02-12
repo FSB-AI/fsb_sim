@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.16)
 
 add_library(gazebo_race_car_model SHARED
   src/gazebo_ros_race_car_model.cpp

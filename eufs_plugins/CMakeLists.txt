@@ -1,5 +1,10 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.16)
 project(eufs_plugins)
+
+# Handle CMake policy compatibility for jsoncpp and other legacy packages
+if(POLICY CMP0141)
+  cmake_policy(SET CMP0141 NEW)
+endif()
 
 # Default to C++14
 if(NOT CMAKE_CXX_STANDARD)
