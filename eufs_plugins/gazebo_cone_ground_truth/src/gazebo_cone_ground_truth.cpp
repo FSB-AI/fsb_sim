@@ -161,6 +161,13 @@ void GazeboConeGroundTruth::Load(gazebo::physics::ModelPtr _parent, sdf::Element
       "/ros_can/reset_cone_pos", std::bind(&GazeboConeGroundTruth::resetConePosition, this,
                                            std::placeholders::_1, std::placeholders::_2));
 
+  // FS-AI real-mode publisher: always publish ConeArrayWithCovariancePlus
+  // on /perception/zed/conearray so all FS-AI planners work in 'real' mode
+  // Use SensorDataQoS (BEST_EFFORT) to match the planners' subscriber QoS
+  this->perception_plus_pub_ =
+      this->rosnode_->create_publisher<eufs_msgs::msg::ConeArrayWithCovariancePlus>(
+          "/perception/zed/conearray", rclcpp::SensorDataQoS());
+
   std::string eufs_tracks_directory = ament_index_cpp::get_package_share_directory("eufs_tracks");
   cone_big_mesh_path = "file:///" + eufs_tracks_directory + "/meshes/cone_big.dae";
   cone_mesh_path = "file:///" + eufs_tracks_directory + "/meshes/cone.dae";
@@ -193,6 +200,7 @@ void GazeboConeGroundTruth::UpdateChild() {
       this->ground_truth_cone_marker_pub_->get_subscription_count() == 0 &&
       this->ground_truth_track_pub_->get_subscription_count() == 0 &&
       this->ground_truth_track_viz_pub_->get_subscription_count() == 0 &&
+      this->perception_plus_pub_->get_subscription_count() == 0 &&
       (!this->simulate_perception_ ||
        (this->perception_cone_pub_->get_subscription_count() == 0 &&
         this->perception_cone_marker_pub_->get_subscription_count() == 0))) {
@@ -274,6 +282,12 @@ void GazeboConeGroundTruth::UpdateChild() {
       this->perception_cone_marker_pub_->publish(perception_cone_marker_array_message);
       this->prev_perception_cone_markers_published = perception_cone_markers_published;
     }
+  }
+
+  // Publish ConeArrayWithCovariancePlus for FS-AI real-mode planners
+  if (this->perception_plus_pub_->get_subscription_count() > 0) {
+    auto plus_msg = convertToCovariancePlus(ground_truth_cones_message);
+    this->perception_plus_pub_->publish(plus_msg);
   }
 }
 
@@ -761,5 +775,61 @@ eufs_msgs::msg::ConeArray GazeboConeGroundTruth::stripCovariance(
   }
   return return_msg;
 }
+}  // namespace eufs_plugins
+}  // namespace gazebo_plugins
+
+// ============================================================================
+// Conversion: ConeArrayWithCovariance → ConeArrayWithCovariancePlus
+// ============================================================================
+
+namespace gazebo_plugins {
+namespace eufs_plugins {
+
+eufs_msgs::msg::ConeArrayWithCovariancePlus GazeboConeGroundTruth::convertToCovariancePlus(
+    const eufs_msgs::msg::ConeArrayWithCovariance &cones) {
+  eufs_msgs::msg::ConeArrayWithCovariancePlus plus_msg;
+  plus_msg.header = cones.header;
+
+  auto make_cone = [](const eufs_msgs::msg::ConeWithCovariance &src,
+                      double blue, double yellow, double orange,
+                      double big_orange) {
+    eufs_msgs::msg::ConeWithCovariancePlus c;
+    c.point = src.point;
+    c.covariance = src.covariance;
+    c.blue_prob = blue;
+    c.yellow_prob = yellow;
+    c.orange_prob = orange;
+    c.big_orange_prob = big_orange;
+    c.id = 0;
+    return c;
+  };
+
+  for (const auto &cone : cones.blue_cones) {
+    plus_msg.cones.push_back(make_cone(cone, 1.0, 0.0, 0.0, 0.0));
+  }
+  for (const auto &cone : cones.yellow_cones) {
+    plus_msg.cones.push_back(make_cone(cone, 0.0, 1.0, 0.0, 0.0));
+  }
+  for (const auto &cone : cones.orange_cones) {
+    plus_msg.cones.push_back(make_cone(cone, 0.0, 0.0, 1.0, 0.0));
+  }
+  for (const auto &cone : cones.big_orange_cones) {
+    plus_msg.cones.push_back(make_cone(cone, 0.0, 0.0, 0.0, 1.0));
+  }
+  for (const auto &cone : cones.unknown_color_cones) {
+    eufs_msgs::msg::ConeWithCovariancePlus c;
+    c.point = cone.point;
+    c.covariance = cone.covariance;
+    c.blue_prob = 0.0;
+    c.yellow_prob = 0.0;
+    c.orange_prob = 0.0;
+    c.big_orange_prob = 0.0;
+    c.id = 0;
+    plus_msg.cones.push_back(c);
+  }
+
+  return plus_msg;
+}
+
 }  // namespace eufs_plugins
 }  // namespace gazebo_plugins

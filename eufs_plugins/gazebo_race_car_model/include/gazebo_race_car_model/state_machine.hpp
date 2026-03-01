@@ -90,6 +90,8 @@ class StateMachine {
 
   bool mission_completed_;  ///< true only when selected mission has finished
 
+  bool driving_flag_;  ///< tracks /state_machine/driving_flag for state_str compatibility
+
   bool in_transition_;  ///< true when the state machine is currently transitioning from AS_READY to
                         ///< AS_DRIVING
   double transition_begin_;  ///< the world timestamp in which the transition from AS_READY to
@@ -98,6 +100,7 @@ class StateMachine {
 
   // High level robot command
   rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr completed_sub_;
+  rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr driving_flag_sub_;
 
   rclcpp::Publisher<eufs_msgs::msg::CanState>::SharedPtr state_pub_;
   rclcpp::Publisher<std_msgs::msg::String>::SharedPtr state_pub_str_;
@@ -114,6 +117,11 @@ class StateMachine {
    * @param message of mission complete
    */
   void completedCallback(const std_msgs::msg::Bool::SharedPtr msg);
+
+  /**
+   * Stores the driving flag state for state_str compatibility
+   */
+  void drivingFlagCallback(const std_msgs::msg::Bool::SharedPtr msg);
 
   /**
    * Sets the mission of the car. Only available in simulation

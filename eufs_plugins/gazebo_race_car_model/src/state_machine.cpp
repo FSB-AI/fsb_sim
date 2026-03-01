@@ -45,12 +45,17 @@ StateMachine::StateMachine(std::shared_ptr<rclcpp::Node> rosnode) : rosnode(rosn
   as_state_ = eufs_msgs::msg::CanState::AS_OFF;
   ami_state_ = eufs_msgs::msg::CanState::AMI_NOT_SELECTED;
   mission_completed_ = false;
+  driving_flag_ = false;
   in_transition_ = false;
 
   // Subscriptions
   completed_sub_ = rosnode->create_subscription<std_msgs::msg::Bool>(
       "/ros_can/mission_completed", 1,
       std::bind(&StateMachine::completedCallback, this, std::placeholders::_1));
+
+  driving_flag_sub_ = rosnode->create_subscription<std_msgs::msg::Bool>(
+      "/state_machine/driving_flag", 1,
+      std::bind(&StateMachine::drivingFlagCallback, this, std::placeholders::_1));
 
   // Services
   reset_srv_ = rosnode->create_service<std_srvs::srv::Trigger>(
@@ -279,7 +284,7 @@ std_msgs::msg::String StateMachine::makeStateString(const eufs_msgs::msg::CanSta
       break;
   }
 
-  str3 = mission_completed_ ? "MISSION_COMPLETED:TRUE" : "MISSION_COMPLETED:FALSE";
+  str3 = driving_flag_ ? "DRIVING:TRUE" : "DRIVING:FALSE";
   std_msgs::msg::String msg = std_msgs::msg::String();
   msg.data = str1 + " " + str2 + " " + str3;
   return msg;
@@ -297,6 +302,10 @@ void StateMachine::completedCallback(const std_msgs::msg::Bool::SharedPtr msg) {
                  msg->data);
     mission_completed_ = msg->data;
   }
+}
+
+void StateMachine::drivingFlagCallback(const std_msgs::msg::Bool::SharedPtr msg) {
+  driving_flag_ = msg->data;
 }
 
 void StateMachine::spinOnce(gazebo::common::Time current_time) {

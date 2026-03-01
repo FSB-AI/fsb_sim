@@ -44,7 +44,9 @@
 #include <eufs_msgs/msg/car_state.hpp>
 #include <eufs_msgs/msg/cone_array.hpp>
 #include <eufs_msgs/msg/cone_array_with_covariance.hpp>
+#include <eufs_msgs/msg/cone_array_with_covariance_plus.hpp>
 #include <eufs_msgs/msg/cone_with_covariance.hpp>
+#include <eufs_msgs/msg/cone_with_covariance_plus.hpp>
 #include <eufs_msgs/msg/point_array.hpp>
 #include <gazebo/common/Plugin.hh>
 #include <gazebo/common/Time.hh>
@@ -147,6 +149,10 @@ class GazeboConeGroundTruth : public gazebo::ModelPlugin {
   eufs_msgs::msg::ConeArrayWithCovariance translateBaseFootprintFrame(
       eufs_msgs::msg::ConeArrayWithCovariance cones);
 
+  // Conversion helper for FS-AI real-mode compatibility
+  eufs_msgs::msg::ConeArrayWithCovariancePlus convertToCovariancePlus(
+      const eufs_msgs::msg::ConeArrayWithCovariance &cones);
+
   // Publishers
   rclcpp::Publisher<eufs_msgs::msg::ConeArrayWithCovariance>::SharedPtr ground_truth_cone_pub_;
   rclcpp::Publisher<visualization_msgs::msg::MarkerArray>::SharedPtr ground_truth_cone_marker_pub_;
@@ -156,6 +162,9 @@ class GazeboConeGroundTruth : public gazebo::ModelPlugin {
 
   rclcpp::Publisher<eufs_msgs::msg::ConeArrayWithCovariance>::SharedPtr perception_cone_pub_;
   rclcpp::Publisher<visualization_msgs::msg::MarkerArray>::SharedPtr perception_cone_marker_pub_;
+
+  // FS-AI real-mode publisher: ConeArrayWithCovariancePlus on /perception/zed/conearray
+  rclcpp::Publisher<eufs_msgs::msg::ConeArrayWithCovariancePlus>::SharedPtr perception_plus_pub_;
 
   // Services
   rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr

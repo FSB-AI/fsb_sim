@@ -40,7 +40,7 @@
     <plugin name="cone_ground_truth" filename="libgazebo_cone_ground_truth.so">
       <alwaysOn>true</alwaysOn>
       <updateRate>25.0</updateRate>
-      <cameraViewDistance>15</cameraViewDistance>
+      <cameraViewDistance>20</cameraViewDistance>
       <lidarViewDistance>100</lidarViewDistance>
       <lidarXViewDistance>20</lidarXViewDistance>
       <lidarYViewDistance>10</lidarYViewDistance>
